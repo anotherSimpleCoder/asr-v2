@@ -6,7 +6,7 @@ OPTIONS = -fsanitize=address
 
 LIBS = -lSDL2
 
-BIN_NAME = test.so
+BIN_NAME = asr.so
 
 compile:
 	g++ -fPIC $(CFLAGS) -c src/*.cpp $(OPTIONS)

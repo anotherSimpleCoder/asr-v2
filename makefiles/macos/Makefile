@@ -6,7 +6,7 @@ OPTIONS = -fsanitize=address
 
 LIBS = -lSDL2
 
-BIN_NAME = test.dylib
+BIN_NAME = asr.dylib
 
 compile:
 	g++ -fPIC $(CFLAGS) -c src/*.cpp $(OPTIONS)
