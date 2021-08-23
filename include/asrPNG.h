@@ -1,26 +1,20 @@
 #include <png.h>
-#include <string>
-#include "asrPixel.h"
-
-using namespace std;
+#include "asrScreen.h"
 
 class asrPNG{
 private:
-	string filename;
-	int width;
-	int height;
-	png_bytep* pixels;
-	asrPixel*** pixelMap;
+	char* filename;
+	asrScreen* screen;
+	FILE* fp;
+	char* title;
+	png_structp png_ptr;
+	png_infop info_ptr;
+	png_bytep row;
 
 public:
-	
-	asrPNG(string fn, int w, int h);
+	asrPNG(char* fn, char* t, asrScreen* s);
 	~asrPNG();
 
-	//getters
-	string getFilename();
-	asrPixel* getPixel(int x, int y);
-
-	int createFile(string fn);
-	int writeValues();
+	int writeImage();
+	
 };
