@@ -9,7 +9,7 @@ LIBS = -lSDL2
 BIN_NAME = test.dylib
 
 compile:
-	g++ $(CFLAGS) -c src/*.cpp $(OPTIONS)
+	g++ -fPIC $(CFLAGS) -c src/*.cpp $(OPTIONS)
 	#g++ $(CFLAGS) -c main.cpp -o main.o $(OPTIONS)
 	g++ $(LIBS) -dynamiclib -fPIC -o $(BIN_NAME) *.o $(OPTIONS)
 	rm *.o
