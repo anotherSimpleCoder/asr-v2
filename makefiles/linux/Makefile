@@ -1,10 +1,11 @@
 SDL_FLAGS = -I /usr/include/SDL2 -D_REENTRANT 
+PNG_FLAGS = -I /usr/include/libpng16 -D_REENTRANT 
 
-CFLAGS = $(SDL_FLAGS) -I include
+CFLAGS = $(SDL_FLAGS) $(PNG_FLAGS) -I include
 
 OPTIONS = -fsanitize=address
 
-LIBS = -lSDL2
+LIBS = -lSDL2 -lpng
 
 BIN_NAME = asr.so
 

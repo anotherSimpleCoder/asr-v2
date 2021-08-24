@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>
+#include <cstring>
+#include <string>
 #include <stdio.h>
 #include <png.h>
 #include "asrPNG.h"
