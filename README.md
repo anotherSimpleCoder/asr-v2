@@ -76,10 +76,12 @@ meta section of the PNG file. After that the extension scans through the pixel m
 
 So yea after a year we have now a 2nd version of asr, which actually took me just a day now instead of 2 entire weeks. (heheyy)
 Actually some plans from the asr-v1 documentation are also now realised or still in the making:
+
 	- the pattern file thing -> asrScript/ASRealize
 	- the editor (still in the making, but it's almost there)
 
 And also this time there are some plans again:
+
 	- a new revision of asrScript (asrScript standard beta) and therefore a new version of ASRealize (now asrealize)
 
 Again if you also have some ideas, feel free to tell me. 
