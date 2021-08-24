@@ -54,7 +54,6 @@ void asr::render(){
 	
 	for(int x = 0; x < width; x++){
 		for(int y = 0; y < height; y++){
-			int pos = x*y;
 			asrPixel* p = screen->getPixel(x,y);
 			asrColor* c = p->getColor();
 			fillRect.x = x;
@@ -65,7 +64,7 @@ void asr::render(){
 			b = c->getColor(ASR_BLUE);
 			a = c->getColor(ASR_ALPHA);
 
-			cout << "(" << x << "," << y << "): " << (int)r << "," << (int)g << "," << (int)b << "," << (int)a << endl;
+			//cout << "(" << x << "," << y << "): " << (int)r << "," << (int)g << "," << (int)b << "," << (int)a << endl;
 
 			SDL_SetRenderDrawColor(renderer, r, g, b, a);
 			SDL_RenderFillRect(renderer, &fillRect);
@@ -81,6 +80,16 @@ void asr::render(){
 			}
 		}	
 	}
+}
+
+void asr::makePNG(string title){
+	asrPNG* pngEngine = new asrPNG(title, screen);
+	
+	pngEngine->IOinit();
+	pngEngine->fillInfo();
+	pngEngine->writeImg();
+
+	delete pngEngine;
 }
 
 asr::~asr(){

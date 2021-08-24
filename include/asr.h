@@ -1,5 +1,5 @@
 #include <SDL.h>
-#include "asrScreen.h"
+#include "asrPNG.h"
 
 class asr{
 private:
@@ -19,5 +19,5 @@ public:
 
 	void assign(asrColor* c, asrVector* v);
 	void render();
-	
+	void makePNG(string title);	
 };

@@ -11,6 +11,8 @@ However a few things have changed:
 
 - its now using a different rendering algorithm, which will be explained later
 
+- asr now has PNG support! (yay!) This means you can store your renders also as binary PNG files and share em around ;)
+
 Get started
 -----------
 
@@ -53,13 +55,21 @@ Here is an overview of all the asr functions:
 	* ```asrScreen* getScreen();```			Get the screen instance.
 	* ```void assign(asrColor* c, asrVector* v);```	Assigns RGBA color to a pixel.
 	* ```void render();```				Renders the image.
-
+	* ```void makePNG(string title);```		Writes the render onto a PNG file. (please give it a filename to save in your fs)
 
 How does asr work?
 ------------------
 
 Version 2 doesn't use the block algorithm anymore. Instead asr uses a pixelmap, where all pixels have a fixed size (1px) and each pixel can be assigned a color inside the RGBA space. Also now instead of constructing each pixel just when assigned all pixels on the map are being rendered. This ensures that you will get a full picture even if it is just a pixel, which is being assigned.
 
+
+How does the png extension in asr work?
+---------------------------------------
+
+In comparison to Version 1, Version 2 now offers a PNG extension. This means that you can store your 2D renders as PNG files, which makes it
+possible to make asr renders more accessible (instead of using asrealize to view the render). It works the following way:
+The pixelmap of the asrScreen module is being inputted to the png extension. Then all the meta data of the asrScreen is being written into the
+meta section of the PNG file. After that the extension scans through the pixel map and copies the color values and stores them onto the PNG file pixel by pixel and in the end the finished file will be stored in your filesystem. This whole thing was made possible thanks to libpng! (go check it out its an awesome library to solve problems regarding images and is actually quite easy to understand).
 
 (As always) Some words for the end
 ----------------------------------
@@ -71,7 +81,6 @@ Actually some plans from the asr-v1 documentation are also now realised or still
 
 And also this time there are some plans again:
 	- a new revision of asrScript (asrScript standard beta) and therefore a new version of ASRealize (now asrealize)
-	- png support for asr (don't worry it won't be asr-v3 lol)
 
 Again if you also have some ideas, feel free to tell me. 
 (If you are done reading this then I am probably implementing the png support and after that start to think of a new concept of asrScript)

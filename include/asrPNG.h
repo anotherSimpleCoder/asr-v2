@@ -1,20 +1,26 @@
 #include <png.h>
 #include "asrScreen.h"
 
+using namespace std;
+
 class asrPNG{
 private:
-	char* filename;
-	asrScreen* screen;
 	FILE* fp;
-	char* title;
+	string title;
+	string filename;	//title+".png"
 	png_structp png_ptr;
 	png_infop info_ptr;
-	png_bytep row;
+	asrScreen* screen;
+	int width;		//will be extracted from asrScreen
+	int height;		//will be extracted from asrScreen
 
-public:
-	asrPNG(char* fn, char* t, asrScreen* s);
+public:	
+	//constructor + destructor
+	asrPNG(string t, asrScreen* s);
 	~asrPNG();
 
-	int writeImage();
-	
+	int IOinit();
+	int fillInfo();
+	int writeImg();
+
 };
