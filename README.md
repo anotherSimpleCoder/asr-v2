@@ -71,6 +71,65 @@ possible to make asr renders more accessible (instead of using asrealize to view
 The pixelmap of the asrScreen module is being inputted to the png extension. Then all the meta data of the asrScreen is being written into the
 meta section of the PNG file. After that the extension scans through the pixel map and copies the color values and stores them onto the PNG file pixel by pixel and in the end the finished file will be stored in your filesystem. This whole thing was made possible thanks to libpng! (go check it out its an awesome library to solve problems regarding images and is actually quite easy to understand).
 
+
+Building
+--------
+
+There are binary libraries included. HOWEVER if your operating system isn't able to handle the library building is the next best option.
+
+To build asr you need the following libraries:
+
+	* SDL2
+	* libpng
+	
+You can get them the following way:
+
+Debian/Ubuntu/(other distros based on Debian):
+
+```sudo apt-get install libsdl2-dev libpng-dev```
+
+Arch Linux:
+
+```sudo pacman -S sdl2 libpng```
+
+Fedora/CentOS:
+
+```sudo dnf install sdl2 libpng```
+
+FreeBSD:
+
+```sudo pkg install sdl2 linux-c7-libpng-1.5.13_3```
+
+macOS (using homebrew):
+
+```brew install sdl2 libpng```
+
+
+After you're done with the installation just change directory to the asr dir.
+
+```cd asr```
+
+Then you navigate to the makefiles folder and choose the Makefile depending on your operating system
+
+For linux/FreeBSD:
+
+```cd makefile/linux```
+
+For macOS:
+
+```cd makefile/macos```
+
+After that you copy the makefile onto the main asr folder:
+
+```cp Makefile <path where you stored asr>/asr/```
+
+Now you can build the library by typing:
+
+```make compile```
+
+And voila you have now a binary lib for your operating system! (yay :D)
+
+
 (As always) Some words for the end
 ----------------------------------
 
