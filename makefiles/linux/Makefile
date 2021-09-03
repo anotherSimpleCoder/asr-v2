@@ -1,4 +1,4 @@
-SDL_FLAGS = -I /usr/include/SDL2 -D_REENTRANT 
+SDL_FLAGS = -I /usr/local/include/SDL2 -D_REENTRANT 
 PNG_FLAGS = -I /usr/include/libpng16 -D_REENTRANT 
 
 CFLAGS = $(SDL_FLAGS) $(PNG_FLAGS) -I include
@@ -9,9 +9,16 @@ LIBS = -lSDL2 -lpng
 
 BIN_NAME = asr.so
 
+STATIC_NAME = asr.a
+
 compile:
-	g++ -fPIC $(CFLAGS) -c src/*.cpp $(OPTIONS)
-	g++ -shared -fPIC $(LIBS) -o $(BIN_NAME) *.o $(OPTIONS)
+	clang++ -fPIC $(CFLAGS) -c src/*.cpp $(OPTIONS)
+	clang++ -shared -fPIC $(LIBS) -o $(BIN_NAME) *.o $(OPTIONS)
+	rm *.o
+
+compileStatic:
+	clang++ $(CFLAGS) -c src/*.cpp $(OPTIONS)
+	ar rvc $(STATIC_NAME) *.o
 	rm *.o
 
 remove:
