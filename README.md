@@ -129,6 +129,9 @@ Now you can build the library by typing:
 
 And voila you have now a binary lib for your operating system! (yay :D)
 
+And if you want to build a static library just type:
+
+```make compileStatic```
 
 (As always) Some words for the end
 ----------------------------------

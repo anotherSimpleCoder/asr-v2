@@ -9,10 +9,16 @@ LIBS = -lSDL2 -lpng
 
 BIN_NAME = asr.dylib
 
+STATIC_NAME = asr-v2.a
+
 compile:
 	g++ -fPIC $(CFLAGS) -c src/*.cpp $(OPTIONS)
-	#g++ $(CFLAGS) -c main.cpp -o main.o $(OPTIONS)
 	g++ $(LIBS) -dynamiclib -fPIC -o $(BIN_NAME) *.o $(OPTIONS)
+	rm *.o
+
+compileStatic:
+	g++ $(CFLAGS) -c src/*.cpp $(OPTIONS)
+	ar rvc $(STATIC_NAME) *.o
 	rm *.o
 
 remove:
