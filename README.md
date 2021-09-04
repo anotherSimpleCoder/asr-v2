@@ -44,6 +44,24 @@ And asr functions are called by:
 a-><asr function>
 ```
 
+Later on when compiling you have to specify to your compiler that you are using the asr library:
+
+### clang:
+
+Linux:
+```bash
+	clang++ -I <path to asr's include dir> -c main.cpp
+	clang++ -o main main.o asr2.so
+```
+
+### g++:
+
+Linux:
+```bash
+	g++ -I <path to asr's include dir> -c main.cpp
+	g++ -o main main.o asr.so
+```
+
 asr functions
 -------------
 
