@@ -51,14 +51,14 @@ Later on when compiling you have to specify to your compiler that you are using 
 Linux:
 ```bash
 	clang++ -I <path to asr's include dir> -c main.cpp
-	clang++ -o main main.o asr2.so
+	clang++ -o main main.o asr.so
 ```
 
 
 macOS:
 ```bash
 	clang++ -I <path to asr's include dir> -c main.cpp
-	clang++ -o main main.o asr2.dylib
+	clang++ -o main main.o asr.dylib
 ```
 
 ### g++:
