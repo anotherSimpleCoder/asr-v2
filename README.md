@@ -54,12 +54,25 @@ Linux:
 	clang++ -o main main.o asr2.so
 ```
 
+
+macOS:
+```bash
+	clang++ -I <path to asr's include dir> -c main.cpp
+	clang++ -o main main.o asr2.dylib
+```
+
 ### g++:
 
 Linux:
 ```bash
 	g++ -I <path to asr's include dir> -c main.cpp
 	g++ -o main main.o asr.so
+```
+
+macOS:
+```bash
+	g++ -I <path to asr's include dir> -c main.cpp
+	g++ -o main.o asr.dylib
 ```
 
 asr functions
