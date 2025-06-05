@@ -12,12 +12,12 @@ BIN_NAME = asr.dylib
 STATIC_NAME = asr-v2.a
 
 compile:
-	clang++ -fPIC $(CFLAGS) -c src/*.cpp $(OPTIONS)
+	clang++ -fPIC $(CFLAGS) -c src/*.cc $(OPTIONS)
 	clang++ $(LIBS) -dynamiclib -fPIC -o $(BIN_NAME) *.o $(OPTIONS)
 	rm *.o
 
 compileStatic:
-	clang++ $(CFLAGS) -c src/*.cpp $(OPTIONS)
+	clang++ $(CFLAGS) -c src/*.cc $(OPTIONS)
 	ar rvc $(STATIC_NAME) *.o
 	rm *.o
 

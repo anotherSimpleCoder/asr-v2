@@ -12,12 +12,12 @@ BIN_NAME = asr.so
 STATIC_NAME = asr.a
 
 compile:
-	clang++ -fPIC $(CFLAGS) -c src/*.cpp $(OPTIONS)
+	clang++ -fPIC $(CFLAGS) -c src/*.cc $(OPTIONS)
 	clang++ -shared -fPIC $(LIBS) -o $(BIN_NAME) *.o $(OPTIONS)
 	rm *.o
 
 compileStatic:
-	clang++ $(CFLAGS) -c src/*.cpp $(OPTIONS)
+	clang++ $(CFLAGS) -c src/*.cc $(OPTIONS)
 	ar rvc $(STATIC_NAME) *.o
 	rm *.o
 
