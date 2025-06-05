@@ -1,6 +1,6 @@
 #include <iostream>
-#include "asrColor.h"
-#include "asrDefines.h"
+#include "asrColor.hh"
+#include "asrDefines.hh"
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 #include <iostream>
-#include "asrPixel.h"
-#include "asrDefines.h"
+#include "asrPixel.hh"
+#include "asrDefines.hh"
 
 using namespace std;
 

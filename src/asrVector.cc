@@ -1,6 +1,6 @@
 #include <iostream>
-#include "asrVector.h"
-#include "asrDefines.h"
+#include "asrVector.hh"
+#include "asrDefines.hh"
 
 using namespace std;
 
